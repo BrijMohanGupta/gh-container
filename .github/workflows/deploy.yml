@@ -21,6 +21,13 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
+      - name: Print env
+        run: |
+          echo "MONGODB_USERNAME: $MONGODB_USERNAME"
+          echo "MONGODB_PASSWORD: $MONGODB_PASSWORD"
+          echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
+          echo "MONGODB_CONNECTION_PROTOCOL: $MONGODB_CONNECTION_PROTOCOL"
+          echo "MONGODB_CLUSTER_ADDRESS: $MONGODB_CLUSTER_ADDRESS"
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
